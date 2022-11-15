@@ -1,10 +1,10 @@
 # PyTrig
 A trigonometry project using math,matplotlib, and tkinter to graph all trigonometric properties of a circle using only theta and the given radius
 
-#Setup
+# Setup
 You will need matplotlib and tkinter installed and a python interpreter. 
 
-#Usage
+# Usage
 For theta, color, and radius the values of all three can be inputed by the user in the top box (color parameters accept HTML color codes and matplotlib color str's)
 You can generate the circle by sliding the theta value bar to the left of the bottom property box or by the graph circle button above the top input box.
 
