@@ -3,6 +3,7 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,NavigationToolb
 from matplotlib.pyplot import *
 from tkinter import *
 from tkinter import ttk
+import numpy as np
 import tkinter as tk
 import matplotlib.pyplot as plt
 import math
@@ -21,6 +22,7 @@ plt.rcParams['xtick.color']="green"
 plt.rcParams['ytick.color']="green"
 fig, ax = plt.subplots()#plot
 π=math.pi
+a=np.linspace( 0 , 2 * np.pi , 150 )
 ###conversion functions###
 RTD = lambda R : float((180/π)*R) #radian to degree
 #functions are interchangeable I;E RTD can take the output from DTR as input and vice versa
@@ -35,8 +37,6 @@ def drawcircle(properties,propertybox):
     R = float(properties[0].split("=")[1])
     ax.set_ylim([-abs(R*2),R*2])
     ax.set_xlim([-abs(R*2),R*2])
-    x=math.arange(-R,R,0.1)
-    y=math.sin(x)
     COS,SIN=R*math.cos(rad),R*math.sin(rad)
     VERSIN=1-COS
     try:
@@ -53,7 +53,7 @@ def drawcircle(properties,propertybox):
     PTI=round(math.sin(rad)**2+math.cos(rad)**2)
     ###Draw the circle and plot trigonometric functions###
     #ax.plot(x,y,color=properties[1].split("=")[1])
-    ax.plot(R*np.cos(A),R*np.sin(A),color=properties[1].split("=")[1])
+    ax.plot(R*np.cos(a),R*np.sin(a),color=properties[1].split("=")[1])
     ax.scatter(0,0,color="white")
     ###Right triangle###
     ax.plot((0,COS),(0,SIN),color="white")#Starting point on degree
